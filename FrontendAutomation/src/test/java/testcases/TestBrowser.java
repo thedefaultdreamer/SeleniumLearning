@@ -13,9 +13,6 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestBrowser {
 	
@@ -25,16 +22,12 @@ public class TestBrowser {
 	public static void main(String[] args) {
 		
 		if (browser.equals("chrome")) {
-			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 		} else if (browser.equals("firefox")) {
-			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		} else if (browser.equals("safari")) {
-			WebDriverManager.safaridriver().setup();
 			driver = new SafariDriver();
 		} else if (browser.equals("edge")) {
-			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 		} 
 		

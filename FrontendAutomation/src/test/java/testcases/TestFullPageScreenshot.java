@@ -2,7 +2,7 @@ package testcases;
  
 import java.io.File;
 import java.io.IOException;
- 
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -10,14 +10,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
  
-import io.github.bonigarcia.wdm.WebDriverManager;
- 
 public class TestFullPageScreenshot {
+	
+	private static  WebDriver driver;
  
 	public static void main(String[] args) throws IOException {
  
-		WebDriverManager.firefoxdriver().setup();
-		WebDriver driver = new FirefoxDriver();
+		driver = new FirefoxDriver();
 		driver.get("https://way2automation.com");
 		driver.manage().window().maximize();
 		
@@ -32,7 +31,5 @@ public class TestFullPageScreenshot {
 			FileUtils.copyFile(pageScreenshot, new File("./screenshot/page.jpg"));
 			
 		}
-
 	}
- 
-}
+} 
